@@ -1,0 +1,36 @@
+{
+    "name":        "funstaff/funstafftikabundle",
+    "type":        "symfony-bundle",
+    "description": "FunstaffTikaBundle: Wrapper for tika.",
+    "keywords":    ["apache tika", "tika"],
+    "homepage":    "https://github.com/Funstaff/FunstaffTikaBundle",
+    "license":     "MIT",
+
+    "authors": [
+        {
+            "name": "Bertrand Zuchuat",
+            "role": "Developer",
+            "homepage": "https://github.com/Garfield-fr"
+        },
+        {
+            "name": "Max Małecki",
+            "role": "Packager",
+            "homepage": "https://github.com/emgiezet"
+        }
+    ],
+
+    "require": {
+        "php":                          ">=5.3.2",
+        "symfony/framework-bundle":     ">=2.0,<2.3-dev",
+        "symfony/security-bundle":      ">=2.0,<2.3-dev"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Funstaff\\TikaBundle": ""
+        }
+    },
+
+    "target-dir": "Funstaff/TikaBundle",
+}
+
