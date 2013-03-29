@@ -17,8 +17,9 @@ class TikaTest extends TestCase
     public function setup()
     {
         $this->config = array(
-            'tika_path' => __DIR__.'/../../vendor/tika/tika-app-1.0.jar',
+            'tika_path' => __DIR__.'/../../Resources/java/tika-app-1.3.jar',
             'output_format' => 'xml',
+            'output_encoding' => 'UTF-8',
             'logging' => true);
     }
 
@@ -93,6 +94,7 @@ class TikaTest extends TestCase
         $tika->addDocument('test', __DIR__.'/../documents/test.pdf');
         $tika->extractContent();
         $content = $tika->getDocument('test')->getContent();
+        
         $this->assertTrue(preg_match('/^<\?xml.*/', $content) > 0);
         $this->assertTrue(preg_match('/Ask follow-up questions/', $content) > 0);
 
@@ -127,7 +129,8 @@ class TikaTest extends TestCase
         $tika->setOutputFormat('text');
         $tika->extractContent();
         $content = $tika->getDocument('test')->getContent();
-        $this->assertTrue(preg_match('/^33.*/', $content) > 0);
+
+        $this->assertTrue(preg_match('/33.*/', $content) > 0);
         $this->assertTrue(preg_match('/Ask follow-up questions/', $content) > 0);
     }
 

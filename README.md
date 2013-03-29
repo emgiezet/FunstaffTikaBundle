@@ -11,9 +11,10 @@ Configuration
 File config.yml
 
     funstaff_tika:
-        tika_path:      /path/to/tika-app-1.0.jar
-        output_format:  ~  # default: xml
-        logging:        ~  # Use the Symfony2 default. Force the logging with this param.
+        tika_path:       /path/to/tika-app-1.0.jar
+        output_format:   ~  # default: xml
+        output_encoding: ~  # default: UTF-8
+        logging:         ~  # Use the Symfony2 default. Force the logging with this param.
 
 
 Examples

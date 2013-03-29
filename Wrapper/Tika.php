@@ -137,7 +137,8 @@ class Tika implements TikaInterface
     public function extractContent()
     {
         ob_start();
-        $command = $this->generateTikaCommand($this->outputFormat);
+        $encoding = $this->configuration['output_encoding'];
+        $command = $this->generateTikaCommand($this->outputFormat, $encoding);
         foreach ($this->document as $doc) {
             if ($this->logger && $this->logging) {
                 $this->logger->info(sprintf('Tika extract content: %s', $doc->getPath()));
@@ -156,7 +157,8 @@ class Tika implements TikaInterface
     public function extractMetadata()
     {
         ob_start();
-        $command = $this->generateTikaCommand('meta');
+        $encoding = $this->configuration['output_encoding'];
+        $command = $this->generateTikaCommand('meta',$encoding);
         foreach ($this->document as $doc) {
             if ($this->logger && $this->logging) {
                 $this->logger->info(sprintf('Tika extract metadata: %s', $doc->getPath()));
@@ -185,15 +187,20 @@ class Tika implements TikaInterface
      *
      * @return string Tika base command
      */
-    protected function generateTikaCommand($flag)
+    protected function generateTikaCommand($flag, $encoding = null)
     {
+        if(null === $encoding)
+        {
+            $encoding = $this->configuration['output_encoding'];
+        }
         if (count($this->document) == 0) {
             throw new \InvalidArgumentException('Add document before run extract function');
         }
 
-        $tikaCommand = sprintf('java -jar %s %s',
+        $tikaCommand = sprintf('java -jar %s %s %s',
                                 $this->configuration['tika_path'],
-                                $this->getOutputFlag($flag)
+                                $this->getOutputFlag($flag),
+                                $this->getOutputEncoding($encoding)
                                 );
 
         return $tikaCommand;
@@ -225,5 +232,10 @@ class Tika implements TikaInterface
         }
 
         return $flag;
+    }
+    
+    protected function getOutputEncoding($encoding)
+    {
+        return '-e'.$encoding;
     }
 }
