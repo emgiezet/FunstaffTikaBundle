@@ -24,7 +24,7 @@
         "symfony/framework-bundle":     ">=2.0,<2.3-dev",
         "symfony/security-bundle":      ">=2.0,<2.3-dev",
         "monolog/monolog": "1.4.*",
-        "symfony/monolog-bridge": "2.2.*@dev"
+        "symfony/monolog-bridge": ">=2.0,<2.3-dev"
     },
 
     "autoload": {
