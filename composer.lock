@@ -1,5 +1,5 @@
 {
-    "hash": "80817196a04179f933ca36e727f262e5",
+    "hash": "5ba442608fcbf7f67162624974df1f61",
     "packages": [
         {
             "name": "doctrine/common",
@@ -609,64 +609,6 @@
             "time": "2013-02-11 10:13:11"
         },
         {
-            "name": "symfony/monolog-bundle",
-            "version": "dev-master",
-            "target-dir": "Symfony/Bundle/MonologBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/MonologBundle.git",
-                "reference": "1be60b1bfefea802732710a3af3166f7ea1ecf51"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/1be60b1bfefea802732710a3af3166f7ea1ecf51",
-                "reference": "1be60b1bfefea802732710a3af3166f7ea1ecf51",
-                "shasum": ""
-            },
-            "require": {
-                "monolog/monolog": ">=1.3,<2.0",
-                "php": ">=5.3.2",
-                "symfony/config": ">=2.2-beta2,<3.0",
-                "symfony/dependency-injection": ">=2.2-beta2,<3.0",
-                "symfony/monolog-bridge": ">=2.2-beta2,<3.0"
-            },
-            "require-dev": {
-                "symfony/yaml": ">=2.2-beta2,<3.0"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Bundle\\MonologBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony MonologBundle",
-            "homepage": "http://symfony.com",
-            "keywords": [
-                "log",
-                "logging"
-            ],
-            "time": "2013-03-12 10:42:54"
-        },
-        {
             "name": "symfony/routing",
             "version": "v2.2.0",
             "target-dir": "Symfony/Component/Routing",
@@ -996,8 +938,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "symfony/monolog-bridge": 20,
-        "symfony/monolog-bundle": 20
+        "symfony/monolog-bridge": 20
     },
     "platform": {
         "php": ">=5.3.2"
