@@ -42,7 +42,7 @@ class Configuration implements ConfigurationInterface
                         ->thenInvalid('Not authorized value for output (only xml, html and text)')
                     ->end()
                 ->end()
-                ->scalarNode('output_encoding')->defaultValue('UTF-8')
+                ->scalarNode('output_encoding')->defaultValue('UTF-8')->end()
                 ->booleanNode('logging')->defaultValue($this->debug)->end()
             ->end();
 
